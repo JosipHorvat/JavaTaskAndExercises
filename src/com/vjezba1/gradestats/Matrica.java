@@ -3,6 +3,12 @@ package com.vjezba1.gradestats;
 import javax.swing.*;
 
 public class Matrica {
+       /*
+   // *************** SPIRALNA MATRICA ***************
+          Matrica pero = new Matrica();
+          pero.spirala();
+
+        */
 
     public void spirala() {
 
