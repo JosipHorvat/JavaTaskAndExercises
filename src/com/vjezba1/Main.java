@@ -11,17 +11,15 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.*;
 
+import static com.vjezba1.gradestats.methods.division;
+import static com.vjezba1.gradestats.methods.printRectangle;
+
 public class Main {
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
 
-
-              }
-
+             }
 }
-
-
-
 
 
 
