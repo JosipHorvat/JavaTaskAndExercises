@@ -1,4 +1,4 @@
-package com.vjezba1.gradestats;
+package com.vjezba1.gradestats.loopsMethodsStringLists;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
