@@ -1,0 +1,36 @@
+  Scanner scanner = new Scanner(System.in);
+        ArrayList<Book> books = new ArrayList<>();
+
+        // Read person information from the user
+        while (true) {
+            System.out.print("Enter name of book, empty will end: ");
+            String name = scanner.nextLine();
+            if (name.isEmpty()) {
+                break;
+            }
+
+            System.out.println("Enter number of pages of a book " + name + ": ");
+            int numberOfPages = Integer.valueOf(scanner.nextLine());
+            System.out.print("Enter publication year of a book " + name + ": ");
+            int published = Integer.valueOf(scanner.nextLine());
+
+
+            // We add a new book to the list.
+            // The book's name, year of publishing and number of pages were decided by the user
+            books.add(new Book(name, numberOfPages, published));
+        }
+
+        // We'll print all details about book if user types everything and only name of book if user types name.
+        System.out.println();
+
+        System.out.println("What information will be printed: ");
+        String info = scanner.nextLine();
+        for (Book book: books) {
+            if(info.equals("everything")){
+                System.out.println(book);
+            }
+            if(info.equals("name")){
+                book.printOnlyTitle();
+            }
+
+        }
