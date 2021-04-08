@@ -1,4 +1,4 @@
-package com.vjezba1.oopIntroductionExercises;
+package com.vjezba1.oopIntroductionExercises.oopperson;
 
 /*
  Person josip = new Person("Josip");
@@ -30,11 +30,12 @@ package com.vjezba1.oopIntroductionExercises;
  */
 
 public class Person {
-
+// CONSTRUCTOR OVERLOADINHG
     private String name;
     private int age;
-    private int weight;
-    private int height;
+    private double weight;
+    private double height;
+
 
     public Person(String initialName, int age) {
         this.age = age;
@@ -43,8 +44,16 @@ public class Person {
         this.name = initialName;
     }
 
-    public int getAge() {
-        return age;
+    public Person(String name) {
+        this(name, 0);
+        //here the code of the second constructor is run, and the age is set to 0
+    }
+
+    public Person(String name, int age,double height , double weight) {
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+        this.height = height;
     }
 
     public void printPerson() {
@@ -52,13 +61,11 @@ public class Person {
     }
 
     public void growOlder() {
-        if (this.age < 30) {
-            this.age = this.age + 1;
-        }
+        this.age++;
     }
-
-    public int returnAge() {
-        return this.age;
+    //OVERLOADED METHOD, this one has a parameter and they cant be same
+    public void growOlder(int years) {
+        this.age = this.age + years;
     }
 
     public boolean isOfLegalAge() {
@@ -66,6 +73,19 @@ public class Person {
             return false;
         }
         return true;
+    }
+    public double bodyMassIndex() {
+        double heigthPerHundred = this.height / 100.0;
+        return this.weight / (heigthPerHundred * heigthPerHundred);
+    }
+
+    public double maximumHeartRate() {
+        return 206.3 - (0.711 * this.age);
+    }
+
+
+    public int getAge() {
+        return age;
     }
 
     public String getName() {
@@ -80,13 +100,17 @@ public class Person {
         this.weight = newWeight;
     }
 
-    public double bodyMassIndex() {
-        double heigthPerHundred = this.height / 100.0;
-        return this.weight / (heigthPerHundred * heigthPerHundred);
+    public double getWeight() {
+        return weight;
     }
 
+    public double getHeight() {
+        return height;
+    }
 
     public String toString() {
-        return this.name + ", age " + this.age + " years, my body mass index is " + bodyMassIndex();}
+        return this.name + ", age " + this.age + " years, my body mass index is " + bodyMassIndex()
+                + " , Maximim heart rate: " +this.maximumHeartRate();
 
+    }
 }
